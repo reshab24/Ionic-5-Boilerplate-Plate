@@ -1,0 +1,43 @@
+ion-title{
+ color:var(--ion-color-dark);   
+}
+ion-content{
+    --background:var(--ion-color-light-tint);
+}
+
+.backGroundColor{
+    background-color:var(--ion-color-primary-contrast);
+    color: var(--ion-color-dark);
+
+    b{
+     color: var(--ion-color-dark);
+    }
+}
+
+ion-item{
+    --border-color:var(--ion-color-medium-tint);
+    --border-radius:10px;
+    --border-width:1px;
+     min-height: 3em;
+    --inner-padding-start:10px;
+    
+}
+ion-label{
+    color: var(--ion-color-medium-tint) !important;
+}
+
+ion-select {
+    // width: 100%;
+    max-width: 70% !important;
+    font-weight: 800;
+  }
+
+  .boltMinus{
+    font-weight: 900;
+    color: var(--ion-color-dark);
+  }
+
+//   .selectBox{
+//     max-width: 70% !important;
+//   }
+  

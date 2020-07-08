@@ -1,0 +1,40 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary" class="ion-padding-top">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+        <div class="ion-padding-start UserInfo">
+          <div class="header">welcome,</div>
+          <div class="subText"> Rishab Vaigankar</div>
+        </div>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item *ngFor="let menu of menusList" lines='none'>
+          <ion-icon name="{{menu.icon}}" slot="start" color="primary" class="ion-padding-start"></ion-icon>
+          <ion-label>
+            {{menu.name}}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title color="dark">Matrimony</ion-title>
+        <ion-title slot="end" (click)="openFilterModel()">Filter</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <app-profile-cart></app-profile-cart>
+      <app-profile-cart></app-profile-cart>
+      <app-profile-cart></app-profile-cart>
+      <app-profile-cart></app-profile-cart>
+     
+    </ion-content>
+  </ion-router-outlet>
+</ion-app>

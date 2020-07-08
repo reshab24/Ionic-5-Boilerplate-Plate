@@ -1,0 +1,121 @@
+
+ <ion-toolbar  class="ion-no-border ion-text-center" mode="ios">
+      <ion-title>Set Preference</ion-title>
+      <ion-buttons slot="start"  class="ion-no-border" mode="md" >
+          <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+            <ion-button (click)="dismissModal()">Close</ion-button>
+      </ion-buttons>
+</ion-toolbar>
+<ion-content>
+    <ion-row class="ion-padding ion-margin-vertical backGroundColor">
+        <ion-col size="12">
+        <b>Age</b>
+        Should be between 
+        </ion-col>
+        <ion-col size="5">
+        <ion-item class="ion-no-padding" size="small">
+            <ion-label>Min</ion-label>
+                <ion-select value="24" class="ion-no-padding" >
+                    <ion-select-option value="24">24 yrs</ion-select-option>
+                    <ion-select-option value="26">25 yrs</ion-select-option>
+                    <ion-select-option value="25">26 yrs</ion-select-option>
+                    <ion-select-option value="27">27 yrs</ion-select-option>
+                    <ion-select-option value="28">28 yrs</ion-select-option>
+                </ion-select>
+        </ion-item>
+        </ion-col>
+        <ion-col size="2" class="ion-align-self-center ion-text-center">
+            <div class="boltMinus">
+            -
+            </div>
+
+        </ion-col>
+        <ion-col size="5">
+        <ion-item class="ion-no-padding" size="small">
+                <ion-label>Max</ion-label>
+                    <ion-select value="24" class="ion-no-padding" >
+                        <ion-select-option value="24">24 yrs</ion-select-option>
+                        <ion-select-option value="26">25 yrs</ion-select-option>
+                        <ion-select-option value="25">26 yrs</ion-select-option>
+                        <ion-select-option value="27">27 yrs</ion-select-option>
+                        <ion-select-option value="28">28 yrs</ion-select-option>
+                    </ion-select>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding ion-margin-vertical backGroundColor">
+        <ion-col size="12">
+        <b>Height</b>
+        Should be between 
+        </ion-col>
+        <ion-col size="5">
+        <ion-item class="ion-no-padding" size="small">
+            <ion-label>Min</ion-label>
+                <ion-select value="5''6" class="ion-no-padding" >
+                    <ion-select-option value="5''6">5''6 ft</ion-select-option>
+                    <ion-select-option value="5''7">5''7 ft</ion-select-option>
+                    <ion-select-option value="5''8">5''8 ft</ion-select-option>
+                    <ion-select-option value="5''9">5''9 ft</ion-select-option>
+                    <ion-select-option value="6''0">6''0 ft</ion-select-option>
+                </ion-select>
+        </ion-item>
+        </ion-col>
+        <ion-col size="2" class="ion-align-self-center ion-text-center">
+            <div class="boltMinus">
+            -
+            </div>
+
+        </ion-col>
+        <ion-col size="5">
+        <ion-item class="ion-no-padding" size="small">
+                <ion-label>Max</ion-label>
+                    <ion-select value="5''6" class="ion-no-padding" >
+                        <ion-select-option value="5''6">5''6 ft</ion-select-option>
+                        <ion-select-option value="5''7">5''7 ft</ion-select-option>
+                        <ion-select-option value="5''8">5''8 ft</ion-select-option>
+                        <ion-select-option value="5''9">5''9 ft</ion-select-option>
+                        <ion-select-option value="6''0">6''0 ft</ion-select-option>
+                    </ion-select>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding ion-margin-vertical backGroundColor">
+        <ion-col size="12">
+        <b>Cast</b>
+        Should be  
+        </ion-col>
+        <ion-col size="12">
+        <ion-item class="ion-no-padding" size="small">
+            <ion-label>Select Cast</ion-label>
+                <ion-select value="5''6" class="ion-no-padding" >
+                    <ion-select-option value="5''6">5''6 ft</ion-select-option>
+                    <ion-select-option value="5''7">5''7 ft</ion-select-option>
+                    <ion-select-option value="5''8">5''8 ft</ion-select-option>
+                    <ion-select-option value="5''9">5''9 ft</ion-select-option>
+                    <ion-select-option value="6''0">6''0 ft</ion-select-option>
+                </ion-select>
+        </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row class="ion-padding ion-margin-vertical backGroundColor">
+            <ion-col size="12">
+            <b>Education</b>
+            Should be  
+            </ion-col>
+            <ion-col size="12">
+            <ion-item class="ion-no-padding" size="small">
+                <ion-label>Select Education</ion-label>
+                    <ion-select value="5''6" class="ion-no-padding"  multiple=true>
+                        <ion-select-option value="5''6">Arts</ion-select-option>
+                        <ion-select-option value="5''7">Post Graduate</ion-select-option>
+                    </ion-select>
+            </ion-item>
+            </ion-col>
+        </ion-row>
+</ion-content>
+<ion-footer>
+    <ion-button type="submit"  class="ion-no-margin"  expand="full" >Save Preference</ion-button>
+</ion-footer>
+

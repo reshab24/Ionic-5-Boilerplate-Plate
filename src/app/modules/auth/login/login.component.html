@@ -1,0 +1,50 @@
+<ion-content  class="ion-padding">
+  <form  [formGroup]="loginForm"  (ngSubmit)="login()">
+    <div class="ion-text-center">
+      <h3 class="my-form__heading">Login</h3>
+      <img src="https://picsum.photos/100/100">
+    </div>
+    <div class="ion-padding-top ion-padding-bottom">
+      <ion-item>
+        <ion-label position="stacked" class="label">Mobile Number</ion-label>
+        <ion-input  type="string" clearInput placeholder="Enter your Mobile Number" formControlName="mobileNumber"   maxlength="10"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" class="label">Password</ion-label>
+        <ion-input type="password" placeholder="Enter your Password"  formControlName="password" ></ion-input>
+      </ion-item>
+    </div>
+    <div  class="ion-padding-top">
+      <ion-button type="submit" expand="block" [disabled]="loginForm.invalid" >Login</ion-button>
+    </div>
+    <div  class="ion-padding-top ion-text-center">
+      Oh ! Not Registered yet?
+    </div>
+    <div  class="ion-padding-top ion-text-center">
+      <ion-button expand="block" fill="outline" routerLink='../registration' routerDirection="forward"> Register Now</ion-button>
+    </div>
+  </form>
+</ion-content>
+<!-- <ion-content class="ion-padding">
+    <div class="ion-text-center">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" class="smallLogo"/>
+        <h3 color="primary" class="my-form__heading">LOGIN</h3>
+      </div>
+  <form>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input autocomplete="off" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input autocomplete="off" type="password"></ion-input>
+    </ion-item>
+   
+  </ion-list>
+  <div class="ion-text-center">
+      <ion-button shape="round" fill="outline">Login</ion-button><br>
+          <a routerLink='../registration'>Create Account</a>
+  </div>
+</form>
+  </ion-content> -->
