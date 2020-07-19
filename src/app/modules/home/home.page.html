@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-menu side="start" menuId="first" contentId="main">
+  <ion-menu side="start" menuId="first" contentId="main" ion-menu-toggle="true">
     <ion-header>
       <ion-toolbar color="primary" class="ion-padding-top">
         <ion-avatar>
@@ -13,12 +13,14 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item *ngFor="let menu of menusList" lines='none'>
-          <ion-icon name="{{menu.icon}}" slot="start" color="primary" class="ion-padding-start"></ion-icon>
-          <ion-label>
-            {{menu.name}}
-          </ion-label>
-        </ion-item>
+        <ion-menu-toggle auto-hide="true"*ngFor="let menu of menusList">
+          <ion-item lines='none'  [routerLink]="">
+            <ion-icon name="{{menu.icon}}" slot="start" color="primary" class="ion-padding-start"></ion-icon>
+            <ion-label>
+              {{menu.name}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
       </ion-list>
     </ion-content>
   </ion-menu>
@@ -34,7 +36,6 @@
       <app-profile-cart></app-profile-cart>
       <app-profile-cart></app-profile-cart>
       <app-profile-cart></app-profile-cart>
-     
     </ion-content>
   </ion-router-outlet>
 </ion-app>

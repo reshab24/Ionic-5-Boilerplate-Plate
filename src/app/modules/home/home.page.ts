@@ -22,10 +22,10 @@ export class HomePage implements OnInit {
       icon:"pricetag-outline",
       name:"Home",
     },
-    // {
-    //   icon:"create-outline",
-    //   name:"Register camplaint",
-    // },
+    {
+      icon:"heart-outline",
+      name:"favourites",
+    },
     // {
     //   icon:"eye-outline",
     //   name:"View camplaint status",

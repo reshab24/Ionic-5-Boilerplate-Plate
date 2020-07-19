@@ -1,7 +1,7 @@
 <div class="backGroundColor ion-margin-vertical">
 <ion-grid>
   <ion-row>
-    <ion-col class="ion-padding-vertical">
+    <ion-col class="ion-padding-vertical" size="6">
       <div class="ion-padding-bottom cardName">Samantha Akkineni</div>
       <div class="UserDetails" color="medium">
         catholic Christan<br>
@@ -10,20 +10,31 @@
         Computer Science
       </div>
     </ion-col>
-    <ion-col class="ion-padding-vertical">
-      <div class="ion-padding-bottom ion-text-end ageNames">
-        26 Years
-        <ion-icon slot="end" name="heart-circle-outline" size="medium" color="primary"></ion-icon>
+    <ion-col class="ion-padding-vertical" size="6">
+      <div class="ion-text-end ageNames">
+        <span slot="start" class="ion-margin-bottom">  26 Years</span> 
+        <ion-icon slot="end" name="heart-circle-filled" size="large" color="primary"></ion-icon>
         <!-- <ion-icon name="heart-circle-outline"></ion-icon> -->
       </div>
-      <img src="https://picsum.photos/120/120">
+
+      <ion-slides [options]="slideOptsOne">
+        <ion-slide>
+          <img src="https://picsum.photos/120/120">
+        </ion-slide>
+        <ion-slide>
+          <img src="https://picsum.photos/120/120">
+        </ion-slide>
+        <ion-slide>
+          <img src="https://picsum.photos/120/120">
+        </ion-slide>
+      </ion-slides>
 
     </ion-col>
   </ion-row>
 </ion-grid>
 <ion-row>
   <ion-col>
-    <ion-button fill="outline" size="small" expand="block"> More Info</ion-button>
+    <ion-button fill="outline" size="small" expand="block" (click)="openProfileInfoCard()"> More Info</ion-button>
   </ion-col>
   <ion-col>
     <ion-button expand="block" size="small"> Connect</ion-button>

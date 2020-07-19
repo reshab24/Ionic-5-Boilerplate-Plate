@@ -10,6 +10,7 @@ import {
 import { LoadingController, ToastController } from '@ionic/angular';
 import { Observable, from, throwError } from 'rxjs';
 import { map, catchError, finalize, switchMap } from 'rxjs/operators';
+
 import { Storage } from '@ionic/storage';
 const TOKEN_KEY = 'token';
 
@@ -26,15 +27,11 @@ export class HttpConfigInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-      this.loadingCrt.getTop().then(hasLoading=>{
-          if(!hasLoading){
-              this.loadingCrt.create({
-                  spinner:'dots',
-                  translucent:true,
-                //   duration:2000
-              }).then(loading=>loading.present())
-          }
-      })
+    this.loadingCrt.create({
+        spinner:'dots',
+        translucent:true,
+       duration:2000
+    }).then(loading=>loading.present())
 
     return from(this.storage.get(TOKEN_KEY))
     .pipe(
@@ -56,20 +53,15 @@ export class HttpConfigInterceptor implements HttpInterceptor {
                       this.presentToast(event.body.message,"success");
                         // do nothing for now
                     }
+                    this.loadingCrt.dismiss();
                     return event;
                 }),
                 catchError((error: HttpErrorResponse) => {
                     const status =  error.status;
                     this.presentToast(error.error.message,"danger");
                     const reason = error && error.error.reason ? error.error.reason : '';
+                    this.loadingCrt.dismiss();
                     return throwError(error);
-                }),
-                finalize(()=>{
-                    this.loadingCrt.getTop().then(hasLoading=>{
-                        if(hasLoading){
-                            this.loadingCrt.dismiss();
-                        }
-                    })
                 })
             );
         }),

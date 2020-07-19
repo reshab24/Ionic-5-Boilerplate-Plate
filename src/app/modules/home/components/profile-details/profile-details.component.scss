@@ -1,0 +1,31 @@
+ion-slide{
+    img{
+       width: 100vw; 
+    }
+}
+
+ion-segment{
+margin-top:-5px;
+--background:var(--ion-color-light-tint); 
+}
+
+.cardName{
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--ion-color-dark);
+}
+
+.slide-text{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: center;
+    z-index: 99;
+    bottom: 30px;
+   
+  }
+  
+  .medium{
+    color: var(--ion-color-medium);
+  }

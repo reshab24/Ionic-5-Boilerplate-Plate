@@ -4,6 +4,11 @@ import { FormBuilder, Validators, FormGroup, ValidatorFn, FormControl } from '@a
 import { AuthService } from 'src/app/services/auth.service';
 import { RegistrationModel } from 'src/app/models/interfaces';
 
+import csc from 'country-state-city';
+import { ICountry, IState, ICity } from 'country-state-city';
+import { StateCityService } from 'src/app/services/state-city.service';
+import { Router } from '@angular/router';
+
 function passwordMatchValidator(password: string): ValidatorFn {
   return (control: FormControl) => {
     if (!control || !control.parent) {
@@ -22,9 +27,14 @@ function passwordMatchValidator(password: string): ValidatorFn {
 export class RegistrationComponent implements OnInit {
 
   registrationForm: FormGroup;
+  statesOfIndia: IState[];
+  cityList: ICity[];
+
   constructor(
     private _FB:FormBuilder,
-    private authService:AuthService
+    private authService:AuthService,
+    private stateCityService:StateCityService,
+    private router:Router
     ) { }
 
   ngOnInit() {
@@ -37,19 +47,27 @@ export class RegistrationComponent implements OnInit {
       familyMembers:['',Validators.required],
       address:['',Validators.required],
       city:['',Validators.required],
-      state:['',Validators.required],
+      state:[[''],Validators.required],
       profession:['',Validators.required],
-      sdnbvfhs:[],
-      // gender:['',Validators.required],
+      gender:['',Validators.required],
       password:['',Validators.required],
       confirmPassword:['',[Validators.required,passwordMatchValidator('password')]],
-    })   
+    })  
+    this.statesOfIndia=this.stateCityService.getStatesOfCountry();
   }
 
-  register():void{
-    this.authService.registration(this.registrationForm.value).subscribe(res=>
-      console.log(res,"responce")
-      )
+  // register():void{
+  //   this.authService.registration(this.registrationForm.value).subscribe(res=>
+  //     console.log(res,"responce")
+  //     )
+  // }
+
+  // continueRegistration():void {
+  //   this.router.navigateByUrl()
+  // }
+
+  onSelectedState(id:string){
+  this.cityList=this.stateCityService.getCitiesFromState(id)
   }
 
 }
